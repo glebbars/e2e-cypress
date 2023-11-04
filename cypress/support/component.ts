@@ -21,6 +21,10 @@ import "@cypress/code-coverage/support";
 
 import { mount } from "cypress/react18";
 
+// issue workaround with cypress vite and styles-components. Ref: https://github.com/cypress-io/cypress/issues/21434
+global.process = global.process || {};
+global.process.env = global.process.env || {};
+
 // Augment the Cypress namespace to include type definitions for
 // your custom command.
 // Alternatively, can be defined in cypress/support/component.d.ts
